@@ -34,6 +34,10 @@ export default class HelloWorldWebPart extends BaseClientSideWebPart<IHelloWorld
         <h2>Well done, ${escape(this.context.pageContext.user.displayName)}!</h2>
         <div>${this._environmentMessage}</div>
         <div>Web part property value: <strong>${escape(this.properties.description)}</strong></div>
+        <p>${escape(this.properties.test)}</p>
+        <p>${this.properties.test1}</p>
+        <p>${escape(this.properties.test2)}</p>
+        <p>${this.properties.test3}</p>
       </div>
       <div>
         <h3>Welcome to SharePoint Framework!</h3>
