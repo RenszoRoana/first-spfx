@@ -9,11 +9,21 @@ export interface IHelloWorldWebPartProps {
     test2: string;
     test3: boolean;
 }
+export interface ISPLists {
+    value: ISPList[];
+}
+export interface ISPList {
+    Title: string;
+    Id: string;
+}
 export default class HelloWorldWebPart extends BaseClientSideWebPart<IHelloWorldWebPartProps> {
     private _isDarkTheme;
     private _environmentMessage;
     render(): void;
     protected onInit(): Promise<void>;
+    private _getListData;
+    private _renderList;
+    private _renderListAsync;
     private _getEnvironmentMessage;
     protected onThemeChanged(currentTheme: IReadonlyTheme | undefined): void;
     protected get dataVersion(): Version;

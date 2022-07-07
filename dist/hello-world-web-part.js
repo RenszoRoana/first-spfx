@@ -1,4 +1,4 @@
-define("e6734194-b84f-4599-a038-c79a2ebaee48_0.0.1", ["@microsoft/sp-property-pane","@microsoft/sp-lodash-subset","@microsoft/sp-core-library","@microsoft/sp-webpart-base","HelloWorldWebPartStrings"], function(__WEBPACK_EXTERNAL_MODULE__26ea__, __WEBPACK_EXTERNAL_MODULE_Pk8u__, __WEBPACK_EXTERNAL_MODULE_UWqr__, __WEBPACK_EXTERNAL_MODULE_br4S__, __WEBPACK_EXTERNAL_MODULE_hI9z__) { return /******/ (function(modules) { // webpackBootstrap
+define("e6734194-b84f-4599-a038-c79a2ebaee48_0.0.1", ["@microsoft/sp-property-pane","@microsoft/sp-lodash-subset","@microsoft/sp-core-library","@microsoft/sp-webpart-base","HelloWorldWebPartStrings","@microsoft/sp-http"], function(__WEBPACK_EXTERNAL_MODULE__26ea__, __WEBPACK_EXTERNAL_MODULE_Pk8u__, __WEBPACK_EXTERNAL_MODULE_UWqr__, __WEBPACK_EXTERNAL_MODULE_br4S__, __WEBPACK_EXTERNAL_MODULE_hI9z__, __WEBPACK_EXTERNAL_MODULE_vlQI__) { return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -153,9 +153,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _microsoft_sp_webpart_base__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_microsoft_sp_webpart_base__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @microsoft/sp-lodash-subset */ "Pk8u");
 /* harmony import */ var _microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./HelloWorldWebPart.module.scss */ "lYr8");
-/* harmony import */ var HelloWorldWebPartStrings__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! HelloWorldWebPartStrings */ "hI9z");
-/* harmony import */ var HelloWorldWebPartStrings__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(HelloWorldWebPartStrings__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _microsoft_sp_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @microsoft/sp-http */ "vlQI");
+/* harmony import */ var _microsoft_sp_http__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_microsoft_sp_http__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./HelloWorldWebPart.module.scss */ "lYr8");
+/* harmony import */ var HelloWorldWebPartStrings__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! HelloWorldWebPartStrings */ "hI9z");
+/* harmony import */ var HelloWorldWebPartStrings__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(HelloWorldWebPartStrings__WEBPACK_IMPORTED_MODULE_6__);
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -177,6 +179,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
 
 
 
+
 var HelloWorldWebPart = /** @class */ (function (_super) {
     __extends(HelloWorldWebPart, _super);
     function HelloWorldWebPart() {
@@ -186,17 +189,44 @@ var HelloWorldWebPart = /** @class */ (function (_super) {
         return _this;
     }
     HelloWorldWebPart.prototype.render = function () {
-        this.domElement.innerHTML = "\n    <section class=\"".concat(_HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].helloWorld, " ").concat(!!this.context.sdks.microsoftTeams ? _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].teams : '', "\">\n      <div class=\"").concat(_HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].welcome, "\">\n        <img alt=\"\" src=\"").concat(this._isDarkTheme ? __webpack_require__(/*! ./assets/welcome-dark.png */ "2f0T") : __webpack_require__(/*! ./assets/welcome-light.png */ "z6Ln"), "\" class=\"").concat(_HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].welcomeImage, "\" />\n        <h2>Well done, ").concat(Object(_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_3__["escape"])(this.context.pageContext.user.displayName), "!</h2>\n        <div>").concat(this._environmentMessage, "</div>\n        <div>Web part property value: <strong>").concat(Object(_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_3__["escape"])(this.properties.description), "</strong></div>\n        <p>").concat(Object(_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_3__["escape"])(this.properties.test), "</p>\n        <p>").concat(this.properties.test1, "</p>\n        <p>").concat(Object(_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_3__["escape"])(this.properties.test2), "</p>\n        <p>").concat(this.properties.test3, "</p>\n      </div>\n      <div>\n        <h3>Welcome to SharePoint Framework!</h3>\n        <p>\n        The SharePoint Framework (SPFx) is a extensibility model for Microsoft Viva, Microsoft Teams and SharePoint. It's the easiest way to extend Microsoft 365 with automatic Single Sign On, automatic hosting and industry standard tooling.\n        </p>\n        <h4>Learn more about SPFx development:</h4>\n          <ul class=\"").concat(_HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_4__["default"].links, "\">\n            <li><a href=\"https://aka.ms/spfx\" target=\"_blank\">SharePoint Framework Overview</a></li>\n            <li><a href=\"https://aka.ms/spfx-yeoman-graph\" target=\"_blank\">Use Microsoft Graph in your solution</a></li>\n            <li><a href=\"https://aka.ms/spfx-yeoman-teams\" target=\"_blank\">Build for Microsoft Teams using SharePoint Framework</a></li>\n            <li><a href=\"https://aka.ms/spfx-yeoman-viva\" target=\"_blank\">Build for Microsoft Viva Connections using SharePoint Framework</a></li>\n            <li><a href=\"https://aka.ms/spfx-yeoman-store\" target=\"_blank\">Publish SharePoint Framework applications to the marketplace</a></li>\n            <li><a href=\"https://aka.ms/spfx-yeoman-api\" target=\"_blank\">SharePoint Framework API reference</a></li>\n            <li><a href=\"https://aka.ms/m365pnp\" target=\"_blank\">Microsoft 365 Developer Community</a></li>\n          </ul>\n      </div>\n    </section>");
+        this.domElement.innerHTML = "\n    <section class=\"".concat(_HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_5__["default"].helloWorld, " ").concat(!!this.context.sdks.microsoftTeams ? _HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_5__["default"].teams : '', "\">\n      <div class=\"").concat(_HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_5__["default"].welcome, "\">\n        <img alt=\"\" src=\"").concat(this._isDarkTheme ? __webpack_require__(/*! ./assets/welcome-dark.png */ "2f0T") : __webpack_require__(/*! ./assets/welcome-light.png */ "z6Ln"), "\" class=\"").concat(_HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_5__["default"].welcomeImage, "\" />\n        <h2>Well done, ").concat(Object(_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_3__["escape"])(this.context.pageContext.user.displayName), "!</h2>\n        <div>").concat(this._environmentMessage, "</div>\n      </div>\n      <div>\n        <h3>Welcome to SharePoint Framework!</h3>\n        <div>Web part description: <strong>").concat(Object(_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_3__["escape"])(this.properties.description), "</strong></div>\n        <div>Web part test: <strong>").concat(Object(_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_3__["escape"])(this.properties.test), "</strong></div>\n        <div>Loading from: <strong>").concat(Object(_microsoft_sp_lodash_subset__WEBPACK_IMPORTED_MODULE_3__["escape"])(this.context.pageContext.web.title), "</strong></div>\n      </div>\n      <div id=\"spListContainer\" />\n    </section>");
+        this._renderListAsync();
     };
     HelloWorldWebPart.prototype.onInit = function () {
         this._environmentMessage = this._getEnvironmentMessage();
         return _super.prototype.onInit.call(this);
     };
+    //Retrieve lists from SharePoint site
+    HelloWorldWebPart.prototype._getListData = function () {
+        return this.context
+            .spHttpClient
+            .get(this.context.pageContext.web.absoluteUrl + "/_api/web/lists?$filter=Hidden eq false", _microsoft_sp_http__WEBPACK_IMPORTED_MODULE_4__["SPHttpClient"].configurations.v1)
+            .then(function (response) {
+            return response.json();
+        });
+    };
+    HelloWorldWebPart.prototype._renderList = function (items) {
+        var html = '';
+        items.forEach(function (item) {
+            html += "\n        <ul class=\"".concat(_HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_5__["default"].list, "\">\n          <li class=\"").concat(_HelloWorldWebPart_module_scss__WEBPACK_IMPORTED_MODULE_5__["default"].listItem, "\">\n            <span class=\"ms-font-l\">").concat(item.Title, "</span>\n          </li>\n        </ul>");
+        });
+        var listContainer = this.domElement.querySelector('#spListContainer');
+        listContainer.innerHTML = html;
+    };
+    //Render lists information
+    HelloWorldWebPart.prototype._renderListAsync = function () {
+        var _this = this;
+        this._getListData()
+            .then(function (response) {
+            _this._renderList(response.value);
+        })
+            .catch(console.error);
+    };
     HelloWorldWebPart.prototype._getEnvironmentMessage = function () {
         if (!!this.context.sdks.microsoftTeams) { // running in Teams
-            return this.context.isServedFromLocalhost ? HelloWorldWebPartStrings__WEBPACK_IMPORTED_MODULE_5__["AppLocalEnvironmentTeams"] : HelloWorldWebPartStrings__WEBPACK_IMPORTED_MODULE_5__["AppTeamsTabEnvironment"];
+            return this.context.isServedFromLocalhost ? HelloWorldWebPartStrings__WEBPACK_IMPORTED_MODULE_6__["AppLocalEnvironmentTeams"] : HelloWorldWebPartStrings__WEBPACK_IMPORTED_MODULE_6__["AppTeamsTabEnvironment"];
         }
-        return this.context.isServedFromLocalhost ? HelloWorldWebPartStrings__WEBPACK_IMPORTED_MODULE_5__["AppLocalEnvironmentSharePoint"] : HelloWorldWebPartStrings__WEBPACK_IMPORTED_MODULE_5__["AppSharePointEnvironment"];
+        return this.context.isServedFromLocalhost ? HelloWorldWebPartStrings__WEBPACK_IMPORTED_MODULE_6__["AppLocalEnvironmentSharePoint"] : HelloWorldWebPartStrings__WEBPACK_IMPORTED_MODULE_6__["AppSharePointEnvironment"];
     };
     HelloWorldWebPart.prototype.onThemeChanged = function (currentTheme) {
         if (!currentTheme) {
@@ -222,11 +252,11 @@ var HelloWorldWebPart = /** @class */ (function (_super) {
             pages: [
                 {
                     header: {
-                        description: HelloWorldWebPartStrings__WEBPACK_IMPORTED_MODULE_5__["PropertyPaneDescription"]
+                        description: HelloWorldWebPartStrings__WEBPACK_IMPORTED_MODULE_6__["PropertyPaneDescription"]
                     },
                     groups: [
                         {
-                            groupName: HelloWorldWebPartStrings__WEBPACK_IMPORTED_MODULE_5__["BasicGroupName"],
+                            groupName: HelloWorldWebPartStrings__WEBPACK_IMPORTED_MODULE_6__["BasicGroupName"],
                             groupFields: [
                                 Object(_microsoft_sp_property_pane__WEBPACK_IMPORTED_MODULE_1__["PropertyPaneTextField"])('description', {
                                     label: 'Description'
@@ -275,7 +305,7 @@ var HelloWorldWebPart = /** @class */ (function (_super) {
 
 exports = module.exports = __webpack_require__(/*! ../../../node_modules/@microsoft/spfx-heft-plugins/node_modules/css-loader/dist/runtime/api.js */ "Z+AG")(false);
 // Module
-exports.push([module.i, ".helloWorld_547bc1b9{overflow:hidden;padding:1em;color:\"[theme:bodyText, default: #323130]\";color:var(--bodyText)}.helloWorld_547bc1b9.teams_547bc1b9{font-family:Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif}.welcome_547bc1b9{text-align:center}.welcomeImage_547bc1b9{width:100%;max-width:420px}.links_547bc1b9 a{text-decoration:none;color:\"[theme:link, default:#03787c]\";color:var(--link)}.links_547bc1b9 a:hover{text-decoration:underline;color:\"[theme:linkHovered, default: #014446]\";color:var(--linkHovered)}", ""]);
+exports.push([module.i, ".helloWorld_765064d6{overflow:hidden;padding:1em;color:\"[theme:bodyText, default: #323130]\";color:var(--bodyText)}.helloWorld_765064d6.teams_765064d6{font-family:Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif}.welcome_765064d6{text-align:center}.welcomeImage_765064d6{width:100%;max-width:420px}.links_765064d6 a{text-decoration:none;color:\"[theme:link, default:#03787c]\";color:var(--link)}.links_765064d6 a:hover{text-decoration:underline;color:\"[theme:linkHovered, default: #014446]\";color:var(--linkHovered)}.list_765064d6{margin:10;padding:10;line-height:50px;list-style-type:none;box-shadow:0 4px 4px 0 rgba(0,0,0,.2),0 25px 50px 0 rgba(0,0,0,.1)}.list_765064d6,.listItem_765064d6{color:#333;font-family:Segoe UI Regular WestEuropean,Segoe UI,Tahoma,Arial,sans-serif;font-size:14px;font-weight:400;box-sizing:border-box}.listItem_765064d6{vertical-align:center;margin:0;padding:0;box-shadow:none;padding:9px 28px 3px;position:relative}", ""]);
 
 
 /***/ }),
@@ -456,11 +486,13 @@ __webpack_require__.r(__webpack_exports__);
 /* tslint:disable */
 __webpack_require__(/*! ./HelloWorldWebPart.module.css */ "UxF6");
 var styles = {
-    helloWorld: 'helloWorld_547bc1b9',
-    teams: 'teams_547bc1b9',
-    welcome: 'welcome_547bc1b9',
-    welcomeImage: 'welcomeImage_547bc1b9',
-    links: 'links_547bc1b9'
+    helloWorld: 'helloWorld_765064d6',
+    teams: 'teams_765064d6',
+    welcome: 'welcome_765064d6',
+    welcomeImage: 'welcomeImage_765064d6',
+    links: 'links_765064d6',
+    list: 'list_765064d6',
+    listItem: 'listItem_765064d6'
 };
 /* harmony default export */ __webpack_exports__["default"] = (styles);
 /* tslint:enable */ 
@@ -815,6 +847,17 @@ try {
 
 module.exports = g;
 
+
+/***/ }),
+
+/***/ "vlQI":
+/*!*************************************!*\
+  !*** external "@microsoft/sp-http" ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_vlQI__;
 
 /***/ }),
 

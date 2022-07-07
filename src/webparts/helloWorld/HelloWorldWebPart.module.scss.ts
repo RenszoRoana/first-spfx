@@ -1,11 +1,13 @@
 /* tslint:disable */
 require("./HelloWorldWebPart.module.css");
 const styles = {
-  helloWorld: 'helloWorld_547bc1b9',
-  teams: 'teams_547bc1b9',
-  welcome: 'welcome_547bc1b9',
-  welcomeImage: 'welcomeImage_547bc1b9',
-  links: 'links_547bc1b9'
+  helloWorld: 'helloWorld_765064d6',
+  teams: 'teams_765064d6',
+  welcome: 'welcome_765064d6',
+  welcomeImage: 'welcomeImage_765064d6',
+  links: 'links_765064d6',
+  list: 'list_765064d6',
+  listItem: 'listItem_765064d6'
 };
 
 export default styles;
