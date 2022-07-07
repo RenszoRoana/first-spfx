@@ -53,7 +53,10 @@ export default class HelloWorldWebPart extends BaseClientSideWebPart<IHelloWorld
         <div>Web part test: <strong>${escape(this.properties.test)}</strong></div>
         <div>Loading from: <strong>${escape(this.context.pageContext.web.title)}</strong></div>
       </div>
+      <div id="spListContainer" />
     </section>`;
+
+    this._renderListAsync();
   }
 
   protected onInit(): Promise<void> {
@@ -62,6 +65,8 @@ export default class HelloWorldWebPart extends BaseClientSideWebPart<IHelloWorld
     return super.onInit();
   }
 
+
+  //Retrieve lists from SharePoint site
   private _getListData(): Promise<ISPLists> {
     return this.context
             .spHttpClient
@@ -76,17 +81,19 @@ export default class HelloWorldWebPart extends BaseClientSideWebPart<IHelloWorld
     let html: string = '';
     items.forEach((item: ISPList) => {
       html += `
-    <ul class="${styles.list}">
-      <li class="${styles.listItem}">
-        <span class="ms-font-l">${item.Title}</span>
-      </li>
-    </ul>`;
+        <ul class="${styles.list}">
+          <li class="${styles.listItem}">
+            <span class="ms-font-l">${item.Title}</span>
+          </li>
+        </ul>`;
     });
 
     const listContainer: Element = this.domElement.querySelector('#spListContainer');
     listContainer.innerHTML = html;
   }
 
+
+  //Render lists information
   private _renderListAsync(): void {
     this._getListData()
       .then((response) => {
