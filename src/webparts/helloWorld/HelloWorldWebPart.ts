@@ -72,6 +72,28 @@ export default class HelloWorldWebPart extends BaseClientSideWebPart<IHelloWorld
         return response.json();
       });
   }
+  private _renderList(items: ISPList[]): void {
+    let html: string = '';
+    items.forEach((item: ISPList) => {
+      html += `
+    <ul class="${styles.list}">
+      <li class="${styles.listItem}">
+        <span class="ms-font-l">${item.Title}</span>
+      </li>
+    </ul>`;
+    });
+
+    const listContainer: Element = this.domElement.querySelector('#spListContainer');
+    listContainer.innerHTML = html;
+  }
+
+  private _renderListAsync(): void {
+    this._getListData()
+      .then((response) => {
+        this._renderList(response.value);
+      })
+      .catch(console.error)
+  }
 
   private _getEnvironmentMessage(): string {
     if (!!this.context.sdks.microsoftTeams) { // running in Teams
